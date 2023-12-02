@@ -27,7 +27,7 @@ The intent of your xaml seems to have a `Label` nested in the `Grid` that "is" t
 </Grid>
 ```
 
-And it exposes a bindable property named `Text`:
+The _control_ exposes a bindable property named `Text`, and the _label_ binds its own `Text` property to its parent control.
 
 ```csharp
 namespace nested_custom_control.Controls;
@@ -95,7 +95,7 @@ I understand that to mean that there will be a deterministic number of `MyCustom
 </Grid>
 ```
 
-To specify "what text goes where" `MyCustomGrid` is exposing bindable properties `UserName`, `Phone`, and `Email` to "direct traffic" to the intended target custom control.
+To specify "what text goes where" `MyCustomGrid` is exposing bindable properties `UserName`, `Phone`, and `Email` to "direct traffic" to the intended target custom control. Again, the `MyUserControl` objects are binding their own `Text` property to different properties in the parent gris.
 
 ```csharp
 public partial class MyCustomGrid : Grid
