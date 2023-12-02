@@ -13,7 +13,7 @@
     <!-- Instance of MyCustomGrid. HERE is where you name your instance. -->
     <controls:MyCustomGrid
         x:Name="myCustomGrid1"
-        UserName="{Binding Text1}"
-        Email="{Binding Text2}"
-        Phone="{Binding Text3}"/>
+        UserName="{Binding UserName}"
+        Email="{Binding Email}"
+        Phone="{Binding Phone}"/>
 </ContentPage>

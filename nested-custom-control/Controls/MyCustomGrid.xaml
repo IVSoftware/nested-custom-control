@@ -15,7 +15,7 @@
         <!-- Instance of MyCustomControl. HERE is where you name your instances. -->
         <controls:MyCustomControl 
             x:Name="myCustomControl1"
-            Text="{Binding Path=Name, Source={RelativeSource AncestorType={x:Type controls:MyCustomGrid}}}"/>
+            Text="{Binding Path=UserName, Source={RelativeSource AncestorType={x:Type controls:MyCustomGrid}}}"/>
     </Border>
     <Border         
         Grid.Row="2">

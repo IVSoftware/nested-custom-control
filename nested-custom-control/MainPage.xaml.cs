@@ -11,7 +11,7 @@ namespace nested_custom_control
             InitializeComponent();
             BindingContext.UserName = "Tommy IV";
             BindingContext.Phone = "(000)000-0000";
-            BindingContext.EMail = "thor@azgard.com";
+            BindingContext.Email = "thor@azgard.com";
         }
         new MainPageBindingContext BindingContext => (MainPageBindingContext)base.BindingContext;
     }
@@ -43,7 +43,7 @@ namespace nested_custom_control
             }
         }
         string _phone = string.Empty;
-        public string EMail
+        public string Email
         {
             get => _email;
             set
