@@ -1,22 +1,32 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <!-- 
-    x:Name="MyCustomControl" should 'not' be set here.
+    x:Name="MyCustomGrid" should 'not' be set here.
     That would be like a custom button saying that in every case its name should be "Button1"
  -->
 <Grid 
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:nested_custom_control.Controls"
-    x:Class="nested_custom_control.Controls.MyCustomGrid">
-    <Border HeightRequest="50">
+    x:Class="nested_custom_control.Controls.MyCustomGrid"
+    RowDefinitions="*,60,60,60,*"
+    BackgroundColor="Azure">
+    <Border         
+        Grid.Row="1">
         <!-- Instance of MyCustomControl. HERE is where you name your instances. -->
-        <controls:MyCustomControl x:Name="myCustomControl1"/>
+        <controls:MyCustomControl 
+            x:Name="myCustomControl1"
+            Text="{Binding Path=Name, Source={RelativeSource AncestorType={x:Type controls:MyCustomGrid}}}"/>
     </Border>
-    <Border HeightRequest="50">
-        <controls:MyCustomControl x:Name="myCustomControl2"/>
+    <Border         
+        Grid.Row="2">
+        <controls:MyCustomControl 
+            x:Name="myCustomControl2"
+            Text="{Binding Path=Phone, Source={RelativeSource AncestorType={x:Type controls:MyCustomGrid}}}"/>
     </Border>
-    <Border HeightRequest="50">
-        <controls:MyCustomControl x:Name="myCustomControl3"/>
+    <Border          
+        Grid.Row="3">
+        <controls:MyCustomControl 
+            x:Name="myCustomControl3"
+            Text="{Binding Path=Email, Source={RelativeSource AncestorType={x:Type controls:MyCustomGrid}}}"/>
     </Border>
 </Grid>

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using nested_custom_control.Controls;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace nested_custom_control
@@ -8,49 +9,53 @@ namespace nested_custom_control
         public MainPage()
         {
             InitializeComponent();
+            BindingContext.UserName = "Tommy IV";
+            BindingContext.Phone = "(000)000-0000";
+            BindingContext.EMail = "thor@azgard.com";
         }
+        new MainPageBindingContext BindingContext => (MainPageBindingContext)base.BindingContext;
     }
     class MainPageBindingContext : INotifyPropertyChanged
     {
-        public string Text1
+        public string UserName
         {
-            get => _text1;
+            get => _userName;
             set
             {
-                if (!Equals(_text1, value))
+                if (!Equals(_userName, value))
                 {
-                    _text1 = value;
+                    _userName = value;
                     OnPropertyChanged();
                 }
             }
         }
-        string _text1 = string.Empty;
-        public string Text2
+        string _userName = string.Empty;
+        public string Phone
         {
-            get => _text2;
+            get => _phone;
             set
             {
-                if (!Equals(_text2, value))
+                if (!Equals(_phone, value))
                 {
-                    _text2 = value;
+                    _phone = value;
                     OnPropertyChanged();
                 }
             }
         }
-        string _text2 = string.Empty;
-        public string Text3
+        string _phone = string.Empty;
+        public string EMail
         {
-            get => _text3;
+            get => _email;
             set
             {
-                if (!Equals(_text3, value))
+                if (!Equals(_email, value))
                 {
-                    _text3 = value;
+                    _email = value;
                     OnPropertyChanged();
                 }
             }
         }
-        string _text3 = string.Empty;
+        string _email = string.Empty;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

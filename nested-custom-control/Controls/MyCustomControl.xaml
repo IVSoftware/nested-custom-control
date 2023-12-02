@@ -6,6 +6,12 @@
 <Grid
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:nested_custom_control.Controls"
     x:Class="nested_custom_control.Controls.MyCustomControl">
-    <Label Text="{Binding Text}" />
+    <Label 
+        FontSize="Medium"
+        Text="{Binding Path=Text, Source={RelativeSource AncestorType={x:Type controls:MyCustomControl}}}"
+        VerticalTextAlignment="Center"
+        HorizontalTextAlignment="Start"
+        Padding="10,0,0,0" />
 </Grid>
