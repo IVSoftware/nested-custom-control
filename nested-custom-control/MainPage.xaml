@@ -2,18 +2,9 @@
 <ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:nested_custom_control"
     xmlns:controls="clr-namespace:nested_custom_control.Controls"
     x:Class="nested_custom_control.MainPage">
-
-    <ContentPage.BindingContext>
-        <local:MainPageBindingContext/>
-    </ContentPage.BindingContext>
     
     <!-- Instance of MyCustomGrid. HERE is where you name your instance. -->
-    <controls:MyCustomGrid
-        x:Name="myCustomGrid1"
-        UserName="{Binding UserName}"
-        Email="{Binding Email}"
-        Phone="{Binding Phone}"/>
+    <controls:MyCustomGrid x:Name="myCustomGrid1"/>
 </ContentPage>
